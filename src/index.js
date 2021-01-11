@@ -43,13 +43,15 @@ return values;
   }
 }
 
-getBooksAndMoviesAsync.then(results=>{console.log("movies and books", {
+getBooksAndMoviesAsync().then(results=>{console.log("movies and books", {
   movies: results.movies,
   books: results.books
 });});
 
-getBooksOrMoviesAsync.then(results=>{
-  console.log("movies OR books", {
-  results
-});
-});
+getBooksOrMoviesAsync().then(results=>{
+  console.log("movies OR books", {results});
+})
+.catch(error =>
+   console.error("Error in getBooksOrMoviesAsync execution", error)
+ );
+;
